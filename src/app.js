@@ -11,6 +11,7 @@ mongoose.connect('mongodb+srv://boneto:boneto@cluster0.rpyi0.azure.mongodb.net/b
 
 // load models
 const Product = require('./models/product');
+const Customer = require('./models/customer');
 
 // load routes
 const indexRoute = require('./routes/index-route');
