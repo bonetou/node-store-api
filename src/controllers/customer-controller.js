@@ -19,11 +19,11 @@ exports.post = async (req, res, next) => {
     try {
         await repository.create(req.body);
         res.status(201).send({
-            message: 'registered product'
+            message: 'registered'
         });
     } catch (e) {
-        res.status(400).send({
-            message: 'registered product failed',
+        res.status(500).send({
+            message: 'registered customer failed',
             data: e
         });
     }
