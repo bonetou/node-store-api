@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Customer = new Schema({
+const Order = new Schema({
     number: {
         type: String,
         required: true,
@@ -25,7 +25,7 @@ const Customer = new Schema({
     },
     items: [{
         quantity: {
-            type: number,
+            type: Number,
             required: true,
             default: 1
         },
@@ -40,4 +40,4 @@ const Customer = new Schema({
     }]
 });
 
-module.exports = mongoose.model('Customer', Customer);
+module.exports = mongoose.model('Order', Order);
