@@ -18,7 +18,7 @@ const Order = new Schema({
         default: Date.now
     },
     status: {
-        type: Date,
+        type: String,
         required: true,
         enum: ['created', 'done'],
         default: 'created'
@@ -35,7 +35,7 @@ const Order = new Schema({
         },
         product: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Customer'
+            ref: 'Product'
         }
     }]
 });

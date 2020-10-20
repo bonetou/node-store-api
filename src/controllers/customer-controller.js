@@ -5,6 +5,17 @@ const Customer = mongoose.model('Customer');
 const ValidationContract = require('../validators/fluent-validator');
 const repository = require('../repositories/customer-repository');
 
+exports.get = async (req, res, next) => {
+    try {
+        var data = await repository.get();
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send({
+            message: 'request error'
+        });
+    }
+}
+
 exports.post = async (req, res, next) => {
     let contract = new ValidationContract();
     contract.hasMinLen(req.body.name, 3, 'name must contain at least 3 characters');
